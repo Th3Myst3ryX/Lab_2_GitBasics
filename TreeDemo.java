@@ -18,7 +18,7 @@ class BinarySearchTree{
    /*
    recursive insert method
    */
-   public Node insert(Node root, int value){
+   /*public Node insert(Node root, int value){
       //base case
       if(root == null){
          root = new Node(value);
@@ -33,6 +33,40 @@ class BinarySearchTree{
       }
       
       return root;
+   }*/
+   
+   /*
+   inserts a node into the tree
+   */
+   public void insert(int value){
+      //tree is empty
+      if(root == null){
+         root = new Node(value);
+         return;
+      }else{
+         Node current = root;
+         Node parent = null;
+         
+         while(true){
+            parent = current;
+            
+            if(value < current.value){
+               current = current.left;
+               if(current == null){
+                  parent.left = new Node(value);
+                  return;
+               }
+            }else{
+               current = current.right;
+               if(current == null){
+                  parent.right = new Node(value);
+                  return;
+               }
+            }
+           
+         }//closing while
+      
+      }//closing main if-else 
    }
    
    
@@ -41,7 +75,12 @@ class BinarySearchTree{
    pre-order traversal
    */
    public void preOrderTraversal(Node root){
-      //implement me
+      if(root == null){
+         return;
+      }
+      System.out.println(root.value);
+      preOrderTraversal(root.left);
+      preOrderTraversal(root.right);
    }
 
    
@@ -81,6 +120,7 @@ class BinarySearchTree{
    */
    public int getMin(Node root){
       //implement me
+      return -1;
    }
   
   
@@ -91,6 +131,7 @@ class BinarySearchTree{
    */
    public int getMax(Node root){
 	  //implement me
+     return -1;
    }
    
    
@@ -144,7 +185,7 @@ public class TreeDemo{
       t1.insert(22);
             
       System.out.print("in-order :   ");
-      t1.inOrderTraversal(t1.root);
+      t1.preOrderTraversal(t1.root);
       System.out.println();
            
       
