@@ -143,8 +143,12 @@ class BinarySearchTree{
    with a smallest key
    */
    public int getMin(Node root){
-      //implement me!
-      return -1;
+     int min;
+      if(root.left == null){
+         min = root.value;
+         return min;
+      }
+      return getMin(root.left);
    }
   
   
