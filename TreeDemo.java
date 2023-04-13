@@ -71,8 +71,9 @@ class BinarySearchTree{
    
    
    
-   /*
-   pre-order traversal
+   /**
+   *Prints out the BST in pre-order.
+   *@param root the current node in the binary search tree.
    */
    public void preOrderTraversal(Node root){
       if(root == null){
@@ -85,8 +86,9 @@ class BinarySearchTree{
 
    
    
-   /*
-   in-order traversal
+   /**
+   *Prints out the BST in order.
+   *@param root the current node in the binary search tree.
    */
    public void inOrderTraversal(Node root){
       if(root == null){
@@ -99,8 +101,9 @@ class BinarySearchTree{
    
    
    
-   /*
-   post-order traversal
+   /**
+   *Prints out the BST in post-order.
+   *@param root the current node in the binary search tree.
    */
    public void postOrderTraversal(Node root){
       if(root == null){
@@ -113,9 +116,11 @@ class BinarySearchTree{
    
    
    
-   /*
-   a method to find the node in the tree
-   with a specific value
+   /**
+   *Returns true if the key is in the BST. Return False if the key is not in the BST.
+   *@param root the current node in the binary search tree.
+   *@param key the value being searched for in the BST
+   *@return true or false.
    */
    public boolean find(Node root, int key){
       boolean check = false;
@@ -138,9 +143,10 @@ class BinarySearchTree{
    
    
    
-   /*
-   a method to find the node in the tree
-   with a smallest key
+   /**
+   *Returns the minimum value in a Binary Search Tree.
+   *@param root the current node in the binary search tree.
+   *@return the minimum value in the BST.
    */
    public int getMin(Node root){
      int min;
@@ -153,9 +159,10 @@ class BinarySearchTree{
   
   
   
-   /*
-   a method to find the node in the tree
-   with a largest key
+   /**
+   *Returns the maximum value in a Binary Search Tree.
+   *@param root the current node in the binary search tree.
+   *@return the maximum value in the BST.
    */
    public int getMax(Node root){
 	  int max;
