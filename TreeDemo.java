@@ -118,8 +118,22 @@ class BinarySearchTree{
    with a specific value
    */
    public boolean find(Node root, int key){
-	  //implement me
-      return false;           
+      boolean check = false;
+      if(root == null){
+         return false;
+      }
+      if(root.value == key){
+         check = true;
+         return check;
+      }
+      if(check == false && root.left != null){
+         return find(root.left, key);
+      }
+      if(check == false && root.right != null){
+         return find(root.right, key);
+      }
+      return check;
+               
    }
    
    
@@ -129,7 +143,7 @@ class BinarySearchTree{
    with a smallest key
    */
    public int getMin(Node root){
-      //implement me
+      //implement me!
       return -1;
    }
   
@@ -140,8 +154,8 @@ class BinarySearchTree{
    with a largest key
    */
    public int getMax(Node root){
-	  //implement me
-     return -1;
+	 //implement me!
+    return -1;
    }
    
    
@@ -195,7 +209,7 @@ public class TreeDemo{
       t1.insert(22);
             
       System.out.print("in-order :   ");
-      t1.postOrderTraversal(t1.root);
+      t1.inOrderTraversal(t1.root);
       System.out.println();
            
       
